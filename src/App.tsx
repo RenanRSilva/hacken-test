@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Image, Row, Select, Table, Typography } from "antd";
 import type { TableProps } from "antd";
 import ReactCodeMirror from "@uiw/react-codemirror";
@@ -223,6 +223,10 @@ const CoinMarketPage: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [currency, marketCap]);
+
   return (
     <div style={{ gap: "24px", display: "flex", flexDirection: "column" }}>
       <Typography style={{ fontSize: "24px" }}>Coins & Markets</Typography>
@@ -270,6 +274,7 @@ const CoinMarketPage: React.FC = () => {
           showTotal: (total, range) =>
             \`Showing \${range[0]}-\${range[1]} of \${total} items\`,
           onChange: handlePageChange,
+          current: currentPage,
         }}
       />
       <Typography style={{ fontSize: "24px" }}>App source code</Typography>
@@ -495,6 +500,10 @@ const CoinMarketPage: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [currency, marketCap]);
+
   return (
     <div style={{ gap: "24px", display: "flex", flexDirection: "column" }}>
       <Typography style={{ fontSize: "24px" }}>Coins & Markets</Typography>
@@ -542,6 +551,7 @@ const CoinMarketPage: React.FC = () => {
           showTotal: (total, range) =>
             `Showing ${range[0]}-${range[1]} of ${total} items`,
           onChange: handlePageChange,
+          current: currentPage,
         }}
       />
       <Typography style={{ fontSize: "24px" }}>App source code</Typography>
