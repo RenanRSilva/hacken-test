@@ -271,8 +271,6 @@ const CoinMarketPage: React.FC = () => {
           pageSize,
           showSizeChanger: true,
           pageSizeOptions: ["10", "20", "50"],
-          showTotal: (total, range) =>
-            \`Showing \${range[0]}-\${range[1]} of \${total} items\`,
           onChange: handlePageChange,
           current: currentPage,
         }}
@@ -548,8 +546,6 @@ const CoinMarketPage: React.FC = () => {
           pageSize,
           showSizeChanger: true,
           pageSizeOptions: ["10", "20", "50"],
-          showTotal: (total, range) =>
-            `Showing ${range[0]}-${range[1]} of ${total} items`,
           onChange: handlePageChange,
           current: currentPage,
         }}
